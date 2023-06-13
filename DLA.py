@@ -13,11 +13,6 @@ matrixLength = len(matrix) - 1
 matrixLastIndex = LineLength - 1
 matrixFirstIndex = 0
 
-
-generateParticle = np.random.randint(0, LineLength)
-matrix[0][generateParticle] = 1
-
-
 particleDirection = np.random.randint(0, 3)
 print("move particle", particleDirection)
 
@@ -28,6 +23,7 @@ def generateParticle():
     generateParticle = np.random.randint(0, LineLength)
     matrix[0][generateParticle] = 1
     print("particle Gerated", generateParticle)
+    print(matrix[0])
     return generateParticle
     
     
@@ -36,7 +32,8 @@ def particleDirection():
     print("move particle", particleDirection)
     return particleDirection
 
-def moveToRigth(matrixLine, currentIndex, matrixFirstIndex):
+def moveToRigth(matrixLine, matrixFirstIndex):
+    global currentIndex
     indexAfterMove = currentIndex
     if currentIndex == matrixFirstIndex:
         matrix[matrixLine][0] = 0
@@ -51,7 +48,7 @@ def moveToRigth(matrixLine, currentIndex, matrixFirstIndex):
         indexAfterMove -= 1
     return indexAfterMove
         
-def moveToLeft(matrixLine, currentIndex, matrixLastIndex ):
+def moveToLeft(matrixLine, matrixLastIndex ):
     indexAfterMove = currentIndex
     if currentIndex == matrixLastIndex:
         print("particle moved throgh")
@@ -67,7 +64,7 @@ def moveToLeft(matrixLine, currentIndex, matrixLastIndex ):
         return indexAfterMove
 
         
-def moveDown(matrixLine, currentIndex):
+def moveDown(matrixLine):
     indexAfterMove = currentIndex
     print("particle moved down")
     matrix[matrixLine][currentIndex] = 0
@@ -75,32 +72,38 @@ def moveDown(matrixLine, currentIndex):
     return indexAfterMove
 
 
-# i = 0
-# while i <= matrixLength:
-#  print(i)
-#  i += 1 
+def moveParticle(particleDirection,matrixLine, matrixFirstIndex, matrixLastIndex): 
+    global currentIndex
+    if particleDirection == 0:
+        currentIndex = moveToRigth(matrixLine, matrixFirstIndex)
+    if particleDirection == 1:
+        currentIndex = moveToLeft(matrixLine,  matrixLastIndex)
+    if particleDirection == 2:
+        currentIndex = moveDown(matrixLine,)
 
-print("linha 1", matrix[0])
-print("linha 2", matrix[1])  
-print("linha 2", matrix[2])
+
+
+
+
+print("matrixLine here", matrixLine)
+
+
 
 currentIndex = generateParticle()
 
+particleDirection = particleDirection()
 
-while matrixLine <= 2:
-    particleDirection = particleDirection()
-    if particleDirection == 0:
-        currentIndex = moveToRigth(matrixLine, currentIndex, matrixFirstIndex)
-        matrixLine += 1
-    if particleDirection == 1:
-        currentIndex = moveToLeft(matrixLine, currentIndex, matrixLastIndex)
-        matrixLine += 1
-    if particleDirection == 2:
-        currentIndex = moveDown(matrixLine, currentIndex) 
-        matrixLine += 1
-    print("end loop")      
- 
 
 print("linha 1", matrix[0])
 print("linha 2", matrix[1])
 print("linha 2", matrix[2])
+print("current index", currentIndex)
+moveParticle(particleDirection,matrixLine, matrixFirstIndex,matrixLastIndex)
+print("current index", currentIndex)
+print("linha 1", matrix[0])
+print("linha 2", matrix[1])
+print("linha 2", matrix[2])
+
+
+        
+
