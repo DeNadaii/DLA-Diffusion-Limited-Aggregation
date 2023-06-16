@@ -49,6 +49,7 @@ def moveToRigth(matrixLine, matrixFirstIndex):
     return indexAfterMove
         
 def moveToLeft(matrixLine, matrixLastIndex ):
+    global currentIndex
     indexAfterMove = currentIndex
     if currentIndex == matrixLastIndex:
         print("particle moved throgh")
@@ -65,6 +66,7 @@ def moveToLeft(matrixLine, matrixLastIndex ):
 
         
 def moveDown(matrixLine):
+    
     indexAfterMove = currentIndex
     print("particle moved down")
     matrix[matrixLine][currentIndex] = 0
@@ -91,19 +93,15 @@ print("matrixLine here", matrixLine)
 
 currentIndex = generateParticle()
 
-particleDirection = particleDirection()
+Direction = particleDirection()
 
 
 print("linha 1", matrix[0])
 print("linha 2", matrix[1])
 print("linha 2", matrix[2])
-print("current index", currentIndex)
-moveParticle(particleDirection,matrixLine, matrixFirstIndex,matrixLastIndex)
-print("current index", currentIndex)
+Direction = particleDirection()
+moveParticle(Direction,matrixLine, matrixFirstIndex,matrixLastIndex)
 print("linha 1", matrix[0])
 print("linha 2", matrix[1])
 print("linha 2", matrix[2])
-
-
-        
 
