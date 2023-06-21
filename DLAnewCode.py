@@ -1,9 +1,11 @@
 import random
 import numpy as np
 
+matrix = np.zeros((5, 5))
+
 def simulacaoDLA():
     # Função para criar uma matriz 5x5 inicializada com zeros
-    matrix = np.zeros((5, 5))
+    
     LinhaAtual = 0
 
     # Função para gerar uma partícula aleatória
@@ -69,4 +71,6 @@ def simulacaoDLA():
     print(matrix)
 
 # Executar a simulação
+simulacaoDLA()
+print("cabo")
 simulacaoDLA()
