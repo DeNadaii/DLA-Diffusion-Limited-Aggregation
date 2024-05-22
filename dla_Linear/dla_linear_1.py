@@ -113,5 +113,4 @@ while i < 11:
 cmapmine = ListedColormap(['w', 'b'], N=2)
 
 plt.matshow(matrix, cmap=cmapmine, vmin=0, vmax=1)
-
-plt.show()
+plt.savefig("dla_Linear/resultado DLA linear.png")
