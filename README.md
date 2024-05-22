@@ -6,6 +6,10 @@ This is the README file for the Diffusion-Limited Aggregation (DLA) project. In 
 
 Diffusion-limited aggregation (DLA) is the process whereby particles undergoing a random walk due to Brownian motion cluster together to form aggregates of such particles. This theory, proposed by T.A. Witten Jr. and L.M. Sander in 1981, is applicable to aggregation in any system where diffusion is the primary means of transport in the system. DLA can be observed in many systems such as electrodeposition, Hele-Shaw flow, mineral deposits, and dielectric breakdown.
 
+![Exemple_DLA_1]([URL_da_Imagem](https://raw.githubusercontent.com/DeNadaii/DLA-Diffusion-Limited-Aggregation/master/dla_Radial/results/Figure_1.png))
+![Exemple_DLA_2]([URL_da_Imagem](https://github.com/DeNadaii/DLA-Diffusion-Limited-Aggregation/blob/master/dla_Radial/results/Figure_1DLA_4.png))
+
+
 ## Project Description
 
 The Diffusion-Limited Aggregation (DLA) project focuses on exploring and analyzing the DLA algorithm, which is a computational model used to simulate the growth of fractal-like patterns. The algorithm starts with a seed particle, and additional particles are randomly released into the system. These particles undergo random walks, and upon contact with existing aggregates, they stick to them, gradually forming complex branching structures.
